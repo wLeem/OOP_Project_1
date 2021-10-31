@@ -1,7 +1,6 @@
 #include "weathervane.h"
 #include <iostream>
 
-
 WeatherVane::WeatherVane() {
     windDirection = 0;
     windSpeed = 0;
@@ -28,11 +27,6 @@ void WeatherVane::setWindSpeed(const int x) {
 
 /*int WeatherVane::getType() const {
     return typeW;
-}*/
-
-/*WeatherStation WeatherVane::setType(int t){
-    WeatherStation ws;
-    return ws;
 }*/
 
 WeatherVane::~WeatherVane() {
