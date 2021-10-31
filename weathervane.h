@@ -15,9 +15,6 @@ class WeatherVane {
         void setWindSpeed(int value);
 
         virtual int getType() const { return 1; }
-        //virtual int getType() const;
-        //virtual void setType();
-
 
         ~WeatherVane();
 
