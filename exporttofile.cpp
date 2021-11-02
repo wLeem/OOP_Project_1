@@ -12,9 +12,6 @@ ExportToFile::~ExportToFile() {
 }
 
 void ExportToFile::on_pushButton_clicked() {
-//    QString path = ui->lineEdit->text();
-//    std::string pathStr = path.toStdString();
-//    ps->exportToFile(pathStr);
     QString str;
     str = QFileDialog::getOpenFileName();
     std::string pathStr = str.toStdString();
