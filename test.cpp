@@ -119,15 +119,9 @@ void meteoCenterConstructorTest() {
 void weatherVaneConstructorTest() {
     std::cout << std::endl;
     WeatherVane wv1{10, 12};
-    //std::cout << wv1.getWindDirection() << std::endl;
-    //wv1.setWindSpeed(15);
-    //std::cout << wv1.getWindSpeed() << std::endl;
-    //WeatherStation ws1{1, 2, 3, 4};
-    //WeatherStation ws2{1, 2, 3, 4};
-    //ws2.setWindSpeed(155);
-    cout << wv1.getType() << endl;
-    WeatherStation ws{};
-    cout << ws.getType();
-    MeteoCenter mc(2);
-    printMeteoCenter(mc);
+    wv1.setWindSpeed(15);
+    assert(wv1.getWindSpeed() == 15);
+    WeatherVane wv2{wv1};
+    assert(wv1.getWindDirection() == wv2.getWindDirection());
+    std::cerr << "All WeatherVane's methods are working" << std::endl;
 }
