@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     isEx = false;
     ms = new MeteoCenter(0);
-    getNewData = new getDataWindow(); // The first Window
+    getNewData = new getDataWindow();
     connect(this, SIGNAL(sendData(MeteoCenter*)), getNewData, SLOT(recieveData(MeteoCenter*)));
 
     dataOneWindow = new DataFromCity();
@@ -66,7 +66,6 @@ void MainWindow::on_pushButton_4_clicked() {
     importWindow->setModal(true);
     importWindow->setWindowTitle("Импортирование");
     importWindow->show();
-
 }
 
 void MainWindow::on_pushButton_5_clicked() {
@@ -82,9 +81,14 @@ void MainWindow::on_pushButton_5_clicked() {
 }
 
 void MainWindow::on_pushButton_6_clicked() {
-    isEx = false;
-    ms->deleteAll();
-    ms = new MeteoCenter(0);
-    QMessageBox::information(this,"","Удалены все старые данные");
+    if (ms->getCountEl() == 0){
+        QMessageBox::warning(this,"Ошибка","Нет данных чтобы обращаться к ним");
+    }
+    else{
+        isEx = false;
+        ms->deleteAll();
+        ms = new MeteoCenter(0);
+        QMessageBox::information(this,"","Удалены все старые данные");
+    }
 }
 
