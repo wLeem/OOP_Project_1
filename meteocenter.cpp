@@ -17,7 +17,6 @@ MeteoCenter::MeteoCenter(int newSideLentgh) {
                 matrix[i][j] = WeatherVane();
                 matrix[i][j].setWindDirection(0 + rand() % 12);
                 matrix[i][j].setWindSpeed(0 + rand() % 50);
-
             }
             else {
                 WeatherStation t = WeatherStation();
@@ -101,7 +100,7 @@ int MeteoCenter::getSideLength() const {
     return sideLength;
 }
 
-void MeteoCenter::importFromFile(string path) {
+void MeteoCenter::importFromFile(const string path) {
     std::ifstream file;
     int typeW;
     float temp;
@@ -137,7 +136,7 @@ void MeteoCenter::importFromFile(string path) {
     file.close();
 }
 
-void MeteoCenter::exportToFile(string path) const {
+void MeteoCenter::exportToFile(const string path) {
     std::ofstream file;
     file.open(path);
     if (file.is_open()) {
