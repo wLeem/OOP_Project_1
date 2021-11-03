@@ -16,7 +16,7 @@ class MeteoCenter {
         int getSideLength() const;
 
         void importFromFile(const std::string path);
-        void exportToFile(std::string path) const;
+        void exportToFile(const std::string path);
 
         [[nodiscard]] std::string* getWeatherInPoint(int row, int column) const;
 
