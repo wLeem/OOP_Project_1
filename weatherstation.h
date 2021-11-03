@@ -15,25 +15,15 @@ class WeatherStation: public WeatherVane {
         int getPressure() const;
         void setPressure(int value);
 
-        /*int getWindDirection() const;
-        void setWindDirection(int value);
-
-        int getWindSpeed() const;
-        void setWindSpeed(int value);*/
-
         int getType() const override;
-        //void setType() override;
 
         void operator=(const WeatherStation& WS);
 
         ~WeatherStation();
 
     private:
-    //protected:
         int temperature;
         int pressure;
-        /*int windDirection;
-        int windSpeed;*/
 };
 
 #endif // WEATHERSTATION_H
